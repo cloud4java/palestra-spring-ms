@@ -1,0 +1,10 @@
+com\javaday\pedidoms\domain\Pedido.class
+com\javaday\pedidoms\feign\ProdutoFeign.class
+com\javaday\pedidoms\domain\dto\PedidoDto.class
+com\javaday\pedidoms\domain\dto\ClienteDto.class
+com\javaday\pedidoms\domain\PedidoRepository.class
+com\javaday\pedidoms\PedidoMsApplication.class
+com\javaday\pedidoms\controller\PedidoController.class
+com\javaday\pedidoms\domain\dto\ProdutoDto.class
+com\javaday\pedidoms\feign\ClienteFeign.class
+com\javaday\pedidoms\service\PedidoService.class

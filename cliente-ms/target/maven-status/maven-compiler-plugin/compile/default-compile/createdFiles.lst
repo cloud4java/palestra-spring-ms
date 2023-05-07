@@ -1,0 +1,6 @@
+com\javaday\clientems\StreamLambdaHandler.class
+com\javaday\clientems\ClienteMsApplication.class
+com\javaday\clientems\domain\Cliente.class
+com\javaday\clientems\domain\ClienteRepository.class
+com\javaday\clientems\service\ClienteService.class
+com\javaday\clientems\controller\ClienteController.class

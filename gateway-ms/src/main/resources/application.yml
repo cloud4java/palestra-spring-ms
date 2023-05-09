@@ -1,0 +1,21 @@
+
+spring:
+  cloud:
+    gateway:
+      default-filters:
+
+      routes:
+        - id: produto
+          uri: http://localhost:8082
+          predicates:
+            - Path=/produto/**
+        - id: cliente
+          uri: http://localhost:8081
+          predicates:
+            -  Path=/cliente/**
+        - id: pedido
+          uri: http://localhost:8083
+          predicates:
+            - Path=/pedido/**
+server:
+  port: 8090

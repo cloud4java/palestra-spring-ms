@@ -1,4 +1,4 @@
-package com.javaday.produtoms.controller;
+    package com.javaday.produtoms.controller;
 
 import com.javaday.produtoms.domain.Produto;
 import com.javaday.produtoms.service.ProdutoService;

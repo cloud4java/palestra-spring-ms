@@ -1,5 +1,8 @@
 
 spring:
+  application:
+    name: Api Gateway Microservice
+
   cloud:
     gateway:
       default-filters:

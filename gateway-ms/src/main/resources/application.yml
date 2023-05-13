@@ -2,7 +2,11 @@
 spring:
   application:
     name: Api Gateway Microservice
-
+  sleuth:
+    sampler:
+      probability: 1.0
+  zipkin:
+    base-url: localhost:9411
   cloud:
     gateway:
       default-filters:
@@ -20,5 +24,8 @@ spring:
           uri: http://localhost:8083
           predicates:
             - Path=/pedido/**
+
 server:
   port: 8090
+
+

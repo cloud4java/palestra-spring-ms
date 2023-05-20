@@ -6,7 +6,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@Component
 @FeignClient(name = "produto-feign",url = "http://localhost:8081")
 public interface ClienteFeign {
     @RequestMapping("/cliente")

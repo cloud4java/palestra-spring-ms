@@ -3,7 +3,8 @@ package com.javaday.pedidoms.service;
 import com.javaday.pedidoms.domain.Pedido;
 import com.javaday.pedidoms.domain.PedidoRepository;
 import com.javaday.pedidoms.domain.dto.ClienteDto;
-import com.javaday.pedidoms.domain.dto.PedidoDto;
+import com.javaday.pedidoms.domain.dto.PedidoRequest;
+import com.javaday.pedidoms.domain.dto.PedidoResponse;
 import com.javaday.pedidoms.domain.dto.ProdutoDto;
 import com.javaday.pedidoms.feign.ClienteFeign;
 import com.javaday.pedidoms.feign.ProdutoFeign;
@@ -27,32 +28,20 @@ public class PedidoService {
         return (List<Pedido>) repository.findAll();
     }
 
-    public PedidoDto getById(Long id) {
+    public PedidoResponse getById(Long id) {
 
         Pedido pedido = repository.findById(id).orElseThrow();
         ClienteDto clienteDto = clienteFeign.findById(pedido.getIdCliente());
         ProdutoDto produtoDto = produtoFeign.findByPedido(id);
 
-        return new PedidoDto(clienteDto, produtoDto);
+        return new PedidoResponse(id, clienteDto.getNome(), produtoDto.getDescricao(), produtoDto.getPreco());
     }
 
-    public Pedido save(Pedido pedido) {
-        return repository.save(pedido);
-    }
-
-    public void save(PedidoDto pedidoDto) {
-        produtoFeign.create(pedidoDto.getProdutoDto());
-        clienteFeign.create(pedidoDto.getClienteDto());
+    public PedidoResponse save(PedidoRequest pedidoRequest) {
         Pedido pedidoEntity = new Pedido();
-        pedidoEntity.setIdCliente(pedidoDto.getClienteDto().getId());
-        pedidoEntity.setIdProduto(pedidoDto.getProdutoDto().getId());
-        repository.save(pedidoEntity);
+        pedidoEntity.setIdCliente(pedidoRequest.getIdClient());
+        pedidoEntity.setIdProduto(pedidoRequest.getIdProduto());
+        Pedido pedido = repository.save(pedidoEntity);
+        return getById(pedido.getId());
     }
-//
-//    private PedidoDto tranlateToDto(Pedido pedido, ClienteDto clienteDto, ProdutoDto produtoDto){
-//        PedidoDto pedidoDto = new PedidoDto();
-//        pedidoDto.setClienteDto(clienteDto);
-//
-//        return pedidoDto;
-//    }
 }

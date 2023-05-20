@@ -1,0 +1,15 @@
+<configuration>
+    <appender name="mySplunk" class="com.splunk.logging.HttpEventCollectorLogbackAppender">
+        <url>http://localhost:8000</url>
+        <index>_audit</index>
+        <!--    <token>TOKEN</token>-->
+        <batch_size_count>10</batch_size_count>
+        <disableCertificateValidation>true</disableCertificateValidation>
+        <layout>
+            #LAYOUT OF YOU CHOICE# (explanation in next section bel)
+        </layout>
+    </appender>
+    <logger name="com" level="info" additivity="false">
+        <appender-ref ref="mySplunk"/>
+    </logger>
+</configuration>

@@ -6,9 +6,8 @@ import com.javaday.pedidoms.domain.dto.ClienteDto;
 import com.javaday.pedidoms.domain.dto.PedidoRequest;
 import com.javaday.pedidoms.domain.dto.PedidoResponse;
 import com.javaday.pedidoms.domain.dto.ProdutoDto;
-import com.javaday.pedidoms.feign.ClienteClient;
-import com.javaday.pedidoms.feign.ProdutoClient;
-import com.javaday.pedidoms.feign.ProdutoFeign;
+import com.javaday.pedidoms.client.ClienteClient;
+import com.javaday.pedidoms.client.ProdutoClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

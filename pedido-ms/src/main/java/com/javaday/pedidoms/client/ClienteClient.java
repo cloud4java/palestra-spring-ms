@@ -1,4 +1,4 @@
-package com.javaday.pedidoms.feign;
+package com.javaday.pedidoms.client;
 
 import com.javaday.pedidoms.domain.dto.ClienteDto;
 import org.springframework.beans.factory.annotation.Value;

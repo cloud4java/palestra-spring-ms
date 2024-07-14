@@ -1,8 +1,7 @@
-package com.javaday.pedidoms.feign;
+package com.javaday.pedidoms.client;
 
 import com.javaday.pedidoms.domain.dto.ClienteDto;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 

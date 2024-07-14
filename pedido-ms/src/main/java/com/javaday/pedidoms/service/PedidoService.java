@@ -30,7 +30,6 @@ public class PedidoService {
     public PedidoResponse getById(Long id) {
 
         Pedido pedido = repository.findById(id).orElseThrow();
-//        ClienteDto clienteDto = clienteFeign.findById(pedido.getIdCliente());
         ClienteDto clienteDto = clienteClient.getClienteById(pedido.getIdCliente());
         ProdutoDto produtoDto = produtoClient.getProductById(id);
 

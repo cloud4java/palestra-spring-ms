@@ -6,7 +6,7 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class PedidoRequest {
-    private Long idClient;
+    private Long idCliente;
     private Long idProduto;
     private Double precoProduto;
 }
